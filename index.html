@@ -90,9 +90,18 @@
 
     }
 
-    searchBtn.addEventListener("click", (enter) => {
-      checkWeather(searchBox.value);
-    })
+// Listen for click event on the search button
+searchBtn.addEventListener("click", () => {
+  checkWeather(searchBox.value);  // Execute when button is clicked
+});
+
+// Listen for "Enter" key press event on the input field
+searchBox.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {  // Check if Enter key is pressed
+    checkWeather(searchBox.value);  // Execute when Enter is pressed
+  }
+});
+
 
     checkWeather();
 
